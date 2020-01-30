@@ -50,28 +50,28 @@ fprintf("mixer1 Mean= %d" ,mean_mixer)
 
 
 
-%Mitigation2 :
-fm2_local = (fm2-fm);
-aa_local2 = exp(1i*2*pi*(-fm2_local)*t);
-mixer2 = aa_local2.*subtrct;
-mean_mixer2 = mean(mixer2);
+% %Mitigation2 :
+% fm2_local = (fm2-fm);
+% aa_local2 = exp(1i*2*pi*(-fm2_local)*t);
+% mixer2 = aa_local2.*subtrct;
+% mean_mixer2 = mean(mixer2);
 
-subtrct2 = mixer2  - mean_mixer2;
-fprintf("\nmixer2 Mean= %d" ,mean_mixer2)
+% subtrct2 = mixer2  - mean_mixer2;
+% fprintf("\nmixer2 Mean= %d" ,mean_mixer2)
 
 
-figure('name','mixer2');
-subplot(211);
-plot(real(mixer2));hold on;
-plot(imag(mixer2),'r');
-legend('real','imag')
-subplot(212);
-stem(df,fftshift(abs(fft(mixer2)))); 
+% figure('name','mixer2');
+% subplot(211);
+% plot(real(mixer2));hold on;
+% plot(imag(mixer2),'r');
+% legend('real','imag')
+% subplot(212);
+% stem(df,fftshift(abs(fft(mixer2)))); 
 
-figure('name','subtract2');
-subplot(211);
-plot(real(subtrct2));hold on;
-plot(imag(subtrct2),'r');
-legend('real','imag')
-subplot(212);
-stem(df,fftshift(abs(fft(subtrct2))));
+% figure('name','subtract2');
+% subplot(211);
+% plot(real(subtrct2));hold on;
+% plot(imag(subtrct2),'r');
+% legend('real','imag')
+% subplot(212);
+% stem(df,fftshift(abs(fft(subtrct2))));
